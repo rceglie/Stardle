@@ -1,4 +1,4 @@
-# stardle
+# Stardle
 Wordle - but movies!
 
 Can you guess the movie based on its cast?
