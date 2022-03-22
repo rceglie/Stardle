@@ -1,0 +1,2 @@
+# stardle
+Wordle - but movies!
