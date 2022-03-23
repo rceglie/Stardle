@@ -1,22 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  var stuff
+
+  var request = new XMLHttpRequest()
+
+  request.open('GET', 'https://api.themoviedb.org/3/movie/278/credits?api_key=c0c9136d20e3a6924f56d64e9ea2a53c', true)
+  request.onload = function () {
+    console.log(this.response)
+  }
+  
+  request.send()
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          hi
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
     </div>
   );
