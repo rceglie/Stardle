@@ -7,6 +7,7 @@ class App extends React.Component {
   constructor(props){
     super(props)
     this.state = {
+      masterList: [],
       actors: []
     }
   }
@@ -20,6 +21,14 @@ class App extends React.Component {
         })
       }
       )
+    fetch("https://api.themoviedb.org/3/list/8195972?api_key=c0c9136d20e3a6924f56d64e9ea2a53c&language=en-US")
+      .then(res => res.json())
+      .then((result) => {
+        this.setState({
+          masterList: result.items
+        })
+      }
+      )
   }
 
   render() {
@@ -29,7 +38,7 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        {actors.map((a) => <Hint actor={a}/> )}
+        {actors.map((a) => <Hint actor={a} key={a.id}/> )}
         <header className="App-header">
           <p>
             text
